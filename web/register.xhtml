@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+           <h:form>
+               <h:panelGrid columns="3">
+                  
+                   Username
+                   <h:inputText value="#{managedBeanClass.name}" id="username" required="true"/>
+                   <h:message for="username" style="color:red" />
+                  
+                   Last Name
+                   <h:inputText value="#{managedBeanClass.suRname}" id="surname" required="true"/>
+                   <h:message for="surname" style="color:red" />
+                   email
+                   <h:inputSecret value="#{managedBeanClass.email}" id="email" required="true"/>
+                   <h:message for="email" style="color:red" />
+<!--                   Role
+                   <h:selectOneMenu value="#{userBean.selected}" converter="#{userconverter}">
+                       <f:selectItems value="#{userBean.role}" var="r" id="userTypes"
+                                      itemValue="#{r}" itemLabel="#{r.rname}" />
+                       <h:message for="userTypes" style="color:red" />
+                   </h:selectOneMenu>-->
+               </h:panelGrid>
+               <h:commandButton value="register" action="#{managedBeanClass.registerUser()}"/>
+           </h:form>
+           <h:messages globalOnly="true" />
+       </f:view>
+    </h:body>
+</html>
+
